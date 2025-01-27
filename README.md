@@ -1,5 +1,3 @@
-**Revised README: BlockFridge**  
-
 ---
 
 **BlockFridge**  
