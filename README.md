@@ -11,8 +11,9 @@ BlockFridge is a blockchain-powered smart fridge platform that revolutionizes pr
 Traditional prepayment systems expose consumers and businesses to significant risks:  
 1. **Consumer Vulnerability**: Prepayments (e.g., deposits for furniture, gift cards, or event services) are unprotected if retailers become insolvent. Consumers rank as unsecured creditors, often recovering little to nothing.  
 2. **Opacity**: Limited visibility into how prepaid funds are managed, leading to disputes and mistrust.  
-3. **Inefficiency**: High transaction fees, manual reconciliation, and inflexible spending controls.  
-4. **Legal Gaps**: As highlighted in the UK Law Commission’s 2016 report, sectors like furniture retail and gift cards lack safeguards for prepayments, leaving consumers unaware of their financial exposure.  
+3. **Inefficiency**: High transaction fees, manual reconciliation, and inflexible spending controls.
+4. **  
+5. **Legal Gaps**: As highlighted in the UK Law Commission’s 2016 report, sectors like furniture retail and gift cards lack safeguards for prepayments, leaving consumers unaware of their financial exposure.  
 
 BlockFridge solves these issues by leveraging blockchain to create a transparent, secure, and trustless prepayment ecosystem.  
 
