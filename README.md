@@ -11,7 +11,7 @@ Traditional prepayment systems expose consumers and businesses to significant ri
 2. **Opacity**: Limited visibility into how prepaid funds are managed, leading to disputes and mistrust.  
 3. **Inefficiency**: High transaction fees, manual reconciliation, and inflexible spending controls.
 4. **  
-5. **Legal Gaps**: As highlighted in the UK Law Commission’s 2016 report, sectors like furniture retail and gift cards lack safeguards for prepayments, leaving consumers unaware of their financial exposure.  
+5. **Legal Gaps**: As highlighted in the UK Law Commission’s 2016  and gift cards lack safeguards for prepayments, leaving consumers unaware of their financial exposure.  
 
 BlockFridge solves these issues by leveraging blockchain to create a transparent, secure, and trustless prepayment ecosystem.  
 
@@ -56,7 +56,7 @@ BlockFridge introduces a decentralized platform that:
 
 **For the Ecosystem**:  
 - **Reduced Disputes**: Dispute resolution is streamlined via blockchain records.  
-- **Legal Compliance**: Addresses gaps identified by the UK Law Commission by decentralizing fund custody.  
+- **Legal Compliance**: Addresses gaps in consumer protection by decentralizing fund custody.  
 
 ---
 
@@ -84,5 +84,3 @@ BlockFridge uses Kotani Pay for frictionless fiat-token conversions:
 3. **Legal Alignment**: Mitigates risks highlighted in the UK Law Commission’s report by redefining prepayment security.  
 
 --- 
-
-**BlockFridge**: Where prepayment meets accountability.
