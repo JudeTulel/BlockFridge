@@ -1,6 +1,4 @@
----
-
-**BlockFridge**  
+### **BlockFridge**  
 BlockFridge is a blockchain-powered smart fridge platform that revolutionizes prepaid shopping by securing consumer funds until goods are physically collected. It addresses systemic risks in traditional prepayment systems—such as lack of insolvency protection and opaque transaction tracking—while enabling seamless, conditional payments for goods.  
 
 ---
