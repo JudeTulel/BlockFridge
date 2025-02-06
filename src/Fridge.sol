@@ -17,28 +17,28 @@ contract Fridge is ERC1155, Ownable {
     mapping(uint256 => string) public tokenNames; // Maps token ID to product name
     mapping(uint256 => uint256) public tokenPrices; // Maps token ID to product price in KES (Kenyan Shillings)
     mapping(uint256 => uint256) public tokenStock; // Maps token ID to available stock of the product
-    
+
     // Mapping of shops (merchants) approved to redeem tokens
     mapping(address => bool) public approvedShops;
-    
+
     // Event to log the purchase of tokens
     event TokensPurchased(address indexed buyer, uint256 tokenId, uint256 quantity, uint256 totalCost);
-    
+
     // Event to log when a store or merchant receives prepaid goods
-    event GoodsRedeemed(address indexed user, address indexed shop, uint256 tokenId, uint256 quantity, uint256 totalCost);
-    
+    event GoodsRedeemed(
+        address indexed user, address indexed shop, uint256 tokenId, uint256 quantity, uint256 totalCost
+    );
+
     // Constructor to initialize the contract with basic URI and USDT token address
     constructor(address _usdtToken) ERC1155("https://api.fridgekenya.com/tokens") Ownable(msg.sender) {
         usdtToken = IERC20(_usdtToken); // Set the USDT token address
     }
 
     // Function to add or update product details (e.g., for a store manager)
-    function setProductDetails(
-        uint256 tokenId,
-        string memory productName,
-        uint256 price,
-        uint256 stock
-    ) external onlyOwner {
+    function setProductDetails(uint256 tokenId, string memory productName, uint256 price, uint256 stock)
+        external
+        onlyOwner
+    {
         tokenNames[tokenId] = productName;
         tokenPrices[tokenId] = price;
         tokenStock[tokenId] = stock;
@@ -53,15 +53,15 @@ contract Fridge is ERC1155, Ownable {
     function purchaseTokens(uint256 tokenId, uint256 quantity) external {
         require(tokenPrices[tokenId] > 0, "Product does not exist.");
         require(tokenStock[tokenId] >= quantity, "Not enough stock available.");
-        
+
         uint256 totalPrice = tokenPrices[tokenId].mul(quantity);
-        
+
         // Transfer USDT from the buyer to the contract (escrow)
         require(usdtToken.transferFrom(msg.sender, address(this), totalPrice), "USDT transfer failed.");
-        
+
         // Decrease stock
         tokenStock[tokenId] = tokenStock[tokenId].sub(quantity);
-        
+
         // Mint the tokens to the buyer
         _mint(msg.sender, tokenId, quantity, "");
 
@@ -73,9 +73,9 @@ contract Fridge is ERC1155, Ownable {
     function redeemTokens(uint256 tokenId, uint256 quantity, address shop) external {
         require(balanceOf(msg.sender, tokenId) >= quantity, "Insufficient tokens to redeem.");
         require(approvedShops[shop], "Shop is not approved for redemption.");
-        
+
         uint256 totalCost = tokenPrices[tokenId].mul(quantity);
-        
+
         // Burn the redeemed tokens
         _burn(msg.sender, tokenId, quantity);
 
