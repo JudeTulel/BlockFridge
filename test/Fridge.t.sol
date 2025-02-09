@@ -21,7 +21,7 @@ contract FridgeTest is Test {
         mockUsdt = new MockUSDT();
 
         // Deploy Fridge contract
-        fridge = new Fridge(address(mockUsdt), "https://your-azure-vm.com/api/tokens/");
+        fridge = new Fridge(address(mockUsdt), "https://azure-vm.com/api/tokens/");
 
         // Setup test environment
         mockUsdt.mint(user, 1000 * 10 ** 6); // Give user 1000 USDT

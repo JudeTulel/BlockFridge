@@ -3,7 +3,6 @@ pragma solidity ^0.8.13;
 
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 /**
@@ -12,7 +11,6 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
  * Modified to use Azure VM for token metadata.
  */
 contract Fridge is ERC1155, Ownable {
-    using SafeMath for uint256;
 
     // USDT contract interface
     IERC20 public usdt;
