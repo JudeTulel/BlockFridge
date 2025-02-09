@@ -3,7 +3,7 @@ pragma solidity ^0.8.13;
 
 import {Script, console} from "forge-std/Script.sol";
 import "../src/Fridge.sol";
-import "../mocks/MockUSDT.sol";
+import "../test/mocks/MockUSDT.sol";
 
 contract FridgeScript is Script {
     Fridge public fridge;
