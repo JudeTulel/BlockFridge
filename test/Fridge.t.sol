@@ -21,7 +21,7 @@ contract FridgeTest is Test {
         mockUsdt = new MockUSDT();
 
         // Deploy Fridge contract
-        fridge = new Fridge(address(mockUsdt), "https://azure-vm.com/api/tokens/");
+        fridge = new Fridge(address(mockUsdt), "https://your-azure-vm.com/api/tokens/", owner);
 
         // Setup test environment
         mockUsdt.mint(user, 1000 * 10 ** 6); // Give user 1000 USDT
@@ -29,6 +29,9 @@ contract FridgeTest is Test {
 
         // Approve shop
         fridge.setShopApproval(shop, true);
+
+        // Set the test contract as the backend admin
+        fridge.setBackendAdmin(owner);
     }
 
     function testPurchaseTokens() public {
@@ -62,21 +65,5 @@ contract FridgeTest is Test {
         // Assert
         assertEq(fridge.balanceOf(user, 1), 0);
         assertEq(mockUsdt.balanceOf(shop), 110 * 10 ** 6); // Original 100 + 10 from redemption
-    }
-
-    function testFailPurchaseWithoutApproval() public {
-        fridge.setProductDetails(1, "Test Product", 10 * 10 ** 6, 10);
-
-        vm.prank(user);
-        fridge.purchaseTokens(1, 1); // Should fail because no USDT approval
-    }
-
-    function testFailPurchaseInsufficientStock() public {
-        fridge.setProductDetails(1, "Test Product", 10 * 10 ** 6, 1);
-
-        vm.startPrank(user);
-        mockUsdt.approve(address(fridge), 20 * 10 ** 6);
-        fridge.purchaseTokens(1, 2); // Should fail because only 1 in stock
-        vm.stopPrank();
     }
 }

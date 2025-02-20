@@ -12,11 +12,15 @@ contract FridgeScript is Script {
     function run() public {
         vm.startBroadcast();
 
-        // Deploy the MockUSDT contract with an initial supply
-        usdtToken = new MockUSDT(1000000 * 10^18); // 1,000,000 USDT with 18 decimals
+        // Deploy the MockUSDT contract with an initial supply (1M USDT with 6 decimals)
+        usdtToken = new MockUSDT();
 
-        // Deploy the Fridge contract with the MockUSDT address
-        fridge = new Fridge(address(usdtToken));
+        // Define the base URI and initial owner for the Fridge contract
+        string memory baseURI = "https://example.com/api/item/";
+        address initialOwner = address(this); // or any other address you want to be the owner
+
+        // Deploy the Fridge contract with the MockUSDT address, base URI, and initial owner
+        fridge = new Fridge(address(usdtToken), baseURI, initialOwner);
 
         // Set product details
         fridge.setProductDetails(1, "Product 1", 100, 10);
