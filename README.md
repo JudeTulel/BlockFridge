@@ -9,7 +9,7 @@ Traditional prepayment systems expose consumers and businesses to significant ri
 2. **Opacity**: Limited visibility into how prepaid funds are managed, leading to disputes and mistrust.  
 3. **Inefficiency**: High transaction fees, manual reconciliation, and inflexible spending controls.
 5. **Legal Gaps**: As highlighted in the UK Law Commission’s 2016  and gift cards lack safeguards for prepayments, leaving consumers unaware of their financial exposure.  
-
+6. **
 BlockFridge solves these issues by leveraging blockchain to create a transparent, secure, and trustless prepayment ecosystem.  
 
 ---
@@ -28,8 +28,8 @@ BlockFridge introduces a decentralized platform that:
    - A user buys tokens (e.g., £500 in "kitchen upgrade tokens") via the BlockFridge app. Funds are held in escrow on the blockchain.  
 **2. Visit a Shop**:  
    - The user selects goods at a BlockFridge-partnered retailer (e.g., a furniture store).  
-**3. Scan QR Code**:  
-   - The shop generates a QR code for the items. The user scans it to authorize payment.  
+**3. Enters Shop Code**:  
+   - The shop has a code linked to it. The user enters it to authorize payment.  
 **4. Secure Release of Funds**:  
    - Tokens are transferred to the retailer **only after** the user collects the goods.  
 **5. Insolvency Protection**:  
@@ -55,18 +55,6 @@ BlockFridge introduces a decentralized platform that:
 - **Reduced Disputes**: Dispute resolution is streamlined via blockchain records.  
 - **Legal Compliance**: Addresses gaps in consumer protection by decentralizing fund custody.  
 
----
-
-### **Feature Module: Shopkeeper Loan System**  
-**Overview**  
-Retailers can access microloans collateralized by their transaction history, ensuring liquidity without risking consumer prepayments.  
-
-**Key Innovations**:  
-- **Risk Assessment**: Loans are approved based on redemption rates, demand trends, and repayment capacity.  
-- **Auto-Repayment**: A percentage of daily token redemptions is deducted to repay loans.  
-- **Insolvency Safeguards**: Consumer prepayments remain in escrow, unaffected by retailer debt.  
-
----
 
 ### **Integration with Kotani Pay**  
 BlockFridge uses Kotani Pay for frictionless fiat-token conversions:  
